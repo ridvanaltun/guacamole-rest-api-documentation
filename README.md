@@ -13,7 +13,9 @@ Guacamole REST API gives you access and manage Guacamole Web Application.
 
 # Overview
 
-This documentation is unofficial and based on Guacamole version 1.1.0. Keep in mind, it's not fully tested.
+This documentation is unofficial and based on Guacamole version 1.1.0.
+
+Keep in mind, it's not fully tested.
 
 # Authentication
 
