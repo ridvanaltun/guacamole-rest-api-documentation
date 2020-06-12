@@ -48,7 +48,7 @@ The standard Http request headers that are used in requests.
 
 # Api Ref
 
-- [Authhentication](https://github.com/ridvanaltun/guacamole-rest-api-documentation/blob/master/docs/AUTHENTICATION.md)
+- [Authentication](https://github.com/ridvanaltun/guacamole-rest-api-documentation/blob/master/docs/AUTHENTICATION.md)
 - [Users](https://github.com/ridvanaltun/guacamole-rest-api-documentation/blob/master/docs/USERS.md)
 - [User Groups](https://github.com/ridvanaltun/guacamole-rest-api-documentation/blob/master/docs/USER-GROUPS.md)
 - [Connections](https://github.com/ridvanaltun/guacamole-rest-api-documentation/blob/master/docs/CONNECTIONS.md)
