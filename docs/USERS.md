@@ -508,6 +508,19 @@ Body must be [json-patch](http://jsonpatch.com/) format.
 ]
 ```
 
+You may also include connection groups (folders), and must if the connection that you wish to allow access to is within a connection group.
+
+```json
+[
+  {
+    "op": "add",
+    "path": "/connectionGroupPermissions/{{connectionGroupId}}",
+    "value": "READ"
+  }
+]
+```
+
+
 ### Response
 
 #### Status Code
@@ -548,6 +561,18 @@ Body must be [json-patch](http://jsonpatch.com/) format.
   {
     "op": "remove",
     "path": "/connectionPermissions/{{connectionId}}",
+    "value": "READ"
+  }
+]
+```
+
+You may also include connection groups (folders)
+
+```json
+[
+  {
+    "op": "remove",
+    "path": "/connectionGroupPermissions/{{connectionGroupId}}",
     "value": "READ"
   }
 ]
