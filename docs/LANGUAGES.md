@@ -1,25 +1,25 @@
+<!-- omit in toc -->
 # Languages
 
 Manage languages.
 
+<!-- omit in toc -->
 # Table of Contents
 
-- [Languages](#languages)
-- [Table of Contents](#table-of-contents)
-  - [List Languages](#list-languages)
-    - [GET /api/languages](#get-apilanguages)
-      - [Headers](#headers)
-      - [Path Parameters](#path-parameters)
-      - [Query Parameters](#query-parameters)
-      - [Request Body](#request-body)
-    - [Response](#response)
-      - [Status Code](#status-code)
-      - [Response Body](#response-body)
+- [List Languages](#list-languages)
+    - [Headers](#headers)
+    - [Path Parameters](#path-parameters)
+    - [Query Parameters](#query-parameters)
+    - [Request Body](#request-body)
+  - [Response](#response)
+    - [Status Code](#status-code)
+    - [Response Body](#response-body)
 
 ## List Languages
 
 List languages.
 
+<!-- omit in toc -->
 ### GET /api/languages
 
 #### Headers

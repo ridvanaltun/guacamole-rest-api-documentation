@@ -1,11 +1,11 @@
+<!-- omit in toc -->
 # Guacamole Web REST API
 
 Guacamole REST API gives you access and manage Guacamole Web Application.
 
+<!-- omit in toc -->
 ## Table of Contents
 
-- [Guacamole Web REST API](#guacamole-web-rest-api)
-  - [Table of Contents](#table-of-contents)
 - [Overview](#overview)
 - [Authentication](#authentication)
 - [Common Responses](#common-responses)

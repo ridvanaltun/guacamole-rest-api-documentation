@@ -1,178 +1,160 @@
+<!-- omit in toc -->
 # Connections
 
 Manage connections.
 
+<!-- omit in toc -->
 # Table of Contents
 
-- [Connections](#connections)
-- [Table of Contents](#table-of-contents)
-  - [List Connections](#list-connections)
-    - [GET /api/session/data/{{data_source}}/connections](#get-apisessiondatadatasourceconnections)
-      - [Headers](#headers)
-      - [Path Parameters](#path-parameters)
-  - [Details of Connection](#details-of-connection)
-    - [GET /api/session/data/{{data_source}}/connections/{{connection}}](#get-apisessiondatadatasourceconnectionsconnection)
-      - [Headers](#headers-1)
-      - [Path Parameters](#path-parameters-1)
-      - [Query Parameters](#query-parameters)
-      - [Request Body](#request-body)
-    - [Response](#response)
-      - [Status Code](#status-code)
-      - [Response Body](#response-body)
-  - [Details of Connection Parameters](#details-of-connection-parameters)
-    - [GET /api/session/data/{{data_source}}/connections/{{connection}}/parameters](#get-apisessiondatadatasourceconnectionsconnectionparameters)
-      - [Headers](#headers-2)
-      - [Path Parameters](#path-parameters-2)
-      - [Query Parameters](#query-parameters-1)
-      - [Request Body](#request-body-1)
-    - [Response](#response-1)
-      - [Status Code](#status-code-1)
-      - [Response Body](#response-body-1)
-  - [Details of Connection History](#details-of-connection-history)
-    - [GET /api/session/data/{{data_source}}/connections/{{connection}}/history](#get-apisessiondatadatasourceconnectionsconnectionhistory)
-      - [Headers](#headers-3)
-      - [Path Parameters](#path-parameters-3)
-      - [Query Parameters](#query-parameters-2)
-      - [Request Body](#request-body-2)
-    - [Response](#response-2)
-      - [Status Code](#status-code-2)
-      - [Response Body](#response-body-2)
-  - [Details of Connection Sharing Profiles](#details-of-connection-sharing-profiles)
-    - [GET /api/session/data/{{data_source}}/connections/{{connection}}/sharingProfiles](#get-apisessiondatadatasourceconnectionsconnectionsharingprofiles)
-      - [Headers](#headers-4)
-      - [Path Parameters](#path-parameters-4)
-      - [Query Parameters](#query-parameters-3)
-  - [List Sharing Profiles](#list-sharing-profiles)
-    - [GET /api/session/data/{{data_source}}/sharingProfiles](#get-apisessiondatadatasourcesharingprofiles)
-      - [Headers](#headers-5)
-      - [Path Parameters](#path-parameters-5)
-      - [Query Parameters](#query-parameters-4)
-      - [Request Body](#request-body-3)
-    - [Response](#response-3)
-      - [Status Code](#status-code-3)
-      - [Response Body](#response-body-3)
-  - [List Active Connections](#list-active-connections)
-    - [GET /api/session/data/{{data_source}}/activeConnections](#get-apisessiondatadatasourceactiveconnections)
-      - [Headers](#headers-6)
-      - [Path Parameters](#path-parameters-6)
-      - [Query Parameters](#query-parameters-5)
-      - [Request Body](#request-body-4)
-    - [Response](#response-4)
-      - [Status Code](#status-code-4)
-      - [Response Body](#response-body-4)
-  - [Kill Connections](#kill-connections)
-    - [PATCH /api/session/data/{{data_source}}/activeConnections](#patch-apisessiondatadatasourceactiveconnections)
-      - [Headers](#headers-7)
-      - [Path Parameters](#path-parameters-7)
-      - [Query Parameters](#query-parameters-6)
-      - [Request Body](#request-body-5)
-    - [Response](#response-5)
-      - [Status Code](#status-code-5)
-      - [Response Body](#response-body-5)
-  - [Create VNC Connection](#create-vnc-connection)
-    - [POST /api/session/data/{{data_source}}/connections](#post-apisessiondatadatasourceconnections)
-      - [Headers](#headers-8)
-      - [Path Parameters](#path-parameters-8)
-      - [Query Parameters](#query-parameters-7)
-      - [Request Body](#request-body-6)
-    - [Response](#response-6)
-      - [Status Code](#status-code-6)
-      - [Response Body](#response-body-6)
-  - [Create SSH Connection](#create-ssh-connection)
-    - [POST /api/session/data/{{data_source}}/connections](#post-apisessiondatadatasourceconnections-1)
-      - [Headers](#headers-9)
-      - [Path Parameters](#path-parameters-9)
-      - [Query Parameters](#query-parameters-8)
-      - [Request Body](#request-body-7)
-    - [Response](#response-7)
-      - [Status Code](#status-code-7)
-      - [Response Body](#response-body-7)
-  - [Create RDP Connection](#create-rdp-connection)
-    - [POST /api/session/data/{{data_source}}/connections](#post-apisessiondatadatasourceconnections-2)
-      - [Headers](#headers-10)
-      - [Path Parameters](#path-parameters-10)
-      - [Query Parameters](#query-parameters-9)
-      - [Request Body](#request-body-8)
-    - [Response](#response-8)
-      - [Status Code](#status-code-8)
-      - [Response Body](#response-body-8)
-  - [Create Telnet Connection](#create-telnet-connection)
-    - [POST /api/session/data/{{data_source}}/connections](#post-apisessiondatadatasourceconnections-3)
-      - [Headers](#headers-11)
-      - [Path Parameters](#path-parameters-11)
-      - [Query Parameters](#query-parameters-10)
-      - [Request Body](#request-body-9)
-    - [Response](#response-9)
-      - [Status Code](#status-code-9)
-      - [Response Body](#response-body-9)
-  - [Create Kubernetes Connection](#create-kubernetes-connection)
-    - [POST /api/session/data/{{data_source}}/connections](#post-apisessiondatadatasourceconnections-4)
-      - [Headers](#headers-12)
-      - [Path Parameters](#path-parameters-12)
-      - [Query Parameters](#query-parameters-11)
-      - [Request Body](#request-body-10)
-    - [Response](#response-10)
-      - [Status Code](#status-code-10)
-      - [Response Body](#response-body-10)
-  - [Update VNC Connection](#update-vnc-connection)
-    - [PUT /api/session/data/{{data_source}}/connections/{{connection}}](#put-apisessiondatadatasourceconnectionsconnection)
-      - [Headers](#headers-13)
-      - [Path Parameters](#path-parameters-13)
-      - [Query Parameters](#query-parameters-12)
-      - [Request Body](#request-body-11)
-    - [Response](#response-11)
-      - [Status Code](#status-code-11)
-      - [Response Body](#response-body-11)
-  - [Update SSH Connection](#update-ssh-connection)
-    - [PUT /api/session/data/{{data_source}}/connections/{{connection}}](#put-apisessiondatadatasourceconnectionsconnection-1)
-      - [Headers](#headers-14)
-      - [Path Parameters](#path-parameters-14)
-      - [Query Parameters](#query-parameters-13)
-      - [Request Body](#request-body-12)
-    - [Response](#response-12)
-      - [Status Code](#status-code-12)
-      - [Response Body](#response-body-12)
-  - [Update RDP Connection](#update-rdp-connection)
-    - [PUT /api/session/data/{{data_source}}/connections/{{connection}}](#put-apisessiondatadatasourceconnectionsconnection-2)
-      - [Headers](#headers-15)
-      - [Path Parameters](#path-parameters-15)
-      - [Query Parameters](#query-parameters-14)
-      - [Request Body](#request-body-13)
-    - [Response](#response-13)
-      - [Status Code](#status-code-13)
-      - [Response Body](#response-body-13)
-  - [Update Telnet Connection](#update-telnet-connection)
-    - [PUT /api/session/data/{{data_source}}/connections/{{connection}}](#put-apisessiondatadatasourceconnectionsconnection-3)
-      - [Headers](#headers-16)
-      - [Path Parameters](#path-parameters-16)
-      - [Query Parameters](#query-parameters-15)
-      - [Request Body](#request-body-14)
-    - [Response](#response-14)
-      - [Status Code](#status-code-14)
-      - [Response Body](#response-body-14)
-  - [Update Kubernetes Connection](#update-kubernetes-connection)
-    - [PUT /api/session/data/{{data_source}}/connections/{{connection}}](#put-apisessiondatadatasourceconnectionsconnection-4)
-      - [Headers](#headers-17)
-      - [Path Parameters](#path-parameters-17)
-      - [Query Parameters](#query-parameters-16)
-      - [Request Body](#request-body-15)
-    - [Response](#response-15)
-      - [Status Code](#status-code-15)
-      - [Response Body](#response-body-15)
-  - [Delete Connection](#delete-connection)
-    - [DELETE /api/session/data/{{data_source}}/connections/{{connection}}](#delete-apisessiondatadatasourceconnectionsconnection)
-      - [Headers](#headers-18)
-      - [Path Parameters](#path-parameters-18)
-      - [Query Parameters](#query-parameters-17)
-      - [Request Body](#request-body-16)
-    - [Response](#response-16)
-      - [Status Code](#status-code-16)
-      - [Response Body](#response-body-16)
+- [List Connections](#list-connections)
+    - [Headers](#headers)
+    - [Path Parameters](#path-parameters)
+- [Details of Connection](#details-of-connection)
+    - [Headers](#headers-1)
+    - [Path Parameters](#path-parameters-1)
+    - [Query Parameters](#query-parameters)
+    - [Request Body](#request-body)
+  - [Response](#response)
+    - [Status Code](#status-code)
+    - [Response Body](#response-body)
+- [Details of Connection Parameters](#details-of-connection-parameters)
+    - [Headers](#headers-2)
+    - [Path Parameters](#path-parameters-2)
+    - [Query Parameters](#query-parameters-1)
+    - [Request Body](#request-body-1)
+  - [Response](#response-1)
+    - [Status Code](#status-code-1)
+    - [Response Body](#response-body-1)
+- [Details of Connection History](#details-of-connection-history)
+    - [Headers](#headers-3)
+    - [Path Parameters](#path-parameters-3)
+    - [Query Parameters](#query-parameters-2)
+    - [Request Body](#request-body-2)
+  - [Response](#response-2)
+    - [Status Code](#status-code-2)
+    - [Response Body](#response-body-2)
+- [Details of Connection Sharing Profiles](#details-of-connection-sharing-profiles)
+    - [Headers](#headers-4)
+    - [Path Parameters](#path-parameters-4)
+    - [Query Parameters](#query-parameters-3)
+- [List Sharing Profiles](#list-sharing-profiles)
+    - [Headers](#headers-5)
+    - [Path Parameters](#path-parameters-5)
+    - [Query Parameters](#query-parameters-4)
+    - [Request Body](#request-body-3)
+  - [Response](#response-3)
+    - [Status Code](#status-code-3)
+    - [Response Body](#response-body-3)
+- [List Active Connections](#list-active-connections)
+    - [Headers](#headers-6)
+    - [Path Parameters](#path-parameters-6)
+    - [Query Parameters](#query-parameters-5)
+    - [Request Body](#request-body-4)
+  - [Response](#response-4)
+    - [Status Code](#status-code-4)
+    - [Response Body](#response-body-4)
+- [Kill Connections](#kill-connections)
+    - [Headers](#headers-7)
+    - [Path Parameters](#path-parameters-7)
+    - [Query Parameters](#query-parameters-6)
+    - [Request Body](#request-body-5)
+  - [Response](#response-5)
+    - [Status Code](#status-code-5)
+    - [Response Body](#response-body-5)
+- [Create VNC Connection](#create-vnc-connection)
+    - [Headers](#headers-8)
+    - [Path Parameters](#path-parameters-8)
+    - [Query Parameters](#query-parameters-7)
+    - [Request Body](#request-body-6)
+  - [Response](#response-6)
+    - [Status Code](#status-code-6)
+    - [Response Body](#response-body-6)
+- [Create SSH Connection](#create-ssh-connection)
+    - [Headers](#headers-9)
+    - [Path Parameters](#path-parameters-9)
+    - [Query Parameters](#query-parameters-8)
+    - [Request Body](#request-body-7)
+  - [Response](#response-7)
+    - [Status Code](#status-code-7)
+    - [Response Body](#response-body-7)
+- [Create RDP Connection](#create-rdp-connection)
+    - [Headers](#headers-10)
+    - [Path Parameters](#path-parameters-10)
+    - [Query Parameters](#query-parameters-9)
+    - [Request Body](#request-body-8)
+  - [Response](#response-8)
+    - [Status Code](#status-code-8)
+    - [Response Body](#response-body-8)
+- [Create Telnet Connection](#create-telnet-connection)
+    - [Headers](#headers-11)
+    - [Path Parameters](#path-parameters-11)
+    - [Query Parameters](#query-parameters-10)
+    - [Request Body](#request-body-9)
+  - [Response](#response-9)
+    - [Status Code](#status-code-9)
+    - [Response Body](#response-body-9)
+- [Create Kubernetes Connection](#create-kubernetes-connection)
+    - [Headers](#headers-12)
+    - [Path Parameters](#path-parameters-12)
+    - [Query Parameters](#query-parameters-11)
+    - [Request Body](#request-body-10)
+  - [Response](#response-10)
+    - [Status Code](#status-code-10)
+    - [Response Body](#response-body-10)
+- [Update VNC Connection](#update-vnc-connection)
+    - [Headers](#headers-13)
+    - [Path Parameters](#path-parameters-13)
+    - [Query Parameters](#query-parameters-12)
+    - [Request Body](#request-body-11)
+  - [Response](#response-11)
+    - [Status Code](#status-code-11)
+    - [Response Body](#response-body-11)
+- [Update SSH Connection](#update-ssh-connection)
+    - [Headers](#headers-14)
+    - [Path Parameters](#path-parameters-14)
+    - [Query Parameters](#query-parameters-13)
+    - [Request Body](#request-body-12)
+  - [Response](#response-12)
+    - [Status Code](#status-code-12)
+    - [Response Body](#response-body-12)
+- [Update RDP Connection](#update-rdp-connection)
+    - [Headers](#headers-15)
+    - [Path Parameters](#path-parameters-15)
+    - [Query Parameters](#query-parameters-14)
+    - [Request Body](#request-body-13)
+  - [Response](#response-13)
+    - [Status Code](#status-code-13)
+    - [Response Body](#response-body-13)
+- [Update Telnet Connection](#update-telnet-connection)
+    - [Headers](#headers-16)
+    - [Path Parameters](#path-parameters-16)
+    - [Query Parameters](#query-parameters-15)
+    - [Request Body](#request-body-14)
+  - [Response](#response-14)
+    - [Status Code](#status-code-14)
+    - [Response Body](#response-body-14)
+- [Update Kubernetes Connection](#update-kubernetes-connection)
+    - [Headers](#headers-17)
+    - [Path Parameters](#path-parameters-17)
+    - [Query Parameters](#query-parameters-16)
+    - [Request Body](#request-body-15)
+  - [Response](#response-15)
+    - [Status Code](#status-code-15)
+    - [Response Body](#response-body-15)
+- [Delete Connection](#delete-connection)
+    - [Headers](#headers-18)
+    - [Path Parameters](#path-parameters-18)
+    - [Query Parameters](#query-parameters-17)
+    - [Request Body](#request-body-16)
+  - [Response](#response-16)
+    - [Status Code](#status-code-16)
+    - [Response Body](#response-body-16)
 
 ## List Connections
 
 List connections.
 
+<!-- omit in toc -->
 ### GET /api/session/data/{{data_source}}/connections
 
 #### Headers
@@ -189,6 +171,7 @@ None.
 
 Details of connection.
 
+<!-- omit in toc -->
 ### GET /api/session/data/{{data_source}}/connections/{{connection}}
 
 #### Headers
@@ -224,6 +207,7 @@ None.
 
 Details of connection parameters.
 
+<!-- omit in toc -->
 ### GET /api/session/data/{{data_source}}/connections/{{connection}}/parameters
 
 #### Headers
@@ -259,6 +243,7 @@ None.
 
 Details of connection history.
 
+<!-- omit in toc -->
 ### GET /api/session/data/{{data_source}}/connections/{{connection}}/history
 
 #### Headers
@@ -294,6 +279,7 @@ None.
 
 Details of connection sharing profiles.
 
+<!-- omit in toc -->
 ### GET /api/session/data/{{data_source}}/connections/{{connection}}/sharingProfiles
 
 #### Headers
@@ -315,6 +301,7 @@ None.
 
 List sharing profiles.
 
+<!-- omit in toc -->
 ### GET /api/session/data/{{data_source}}/sharingProfiles
 
 #### Headers
@@ -349,6 +336,7 @@ None.
 
 List active connections.
 
+<!-- omit in toc -->
 ### GET /api/session/data/{{data_source}}/activeConnections
 
 #### Headers
@@ -383,6 +371,7 @@ None.
 
 Kill connections.
 
+<!-- omit in toc -->
 ### PATCH /api/session/data/{{data_source}}/activeConnections
 
 #### Headers
@@ -426,6 +415,7 @@ Body must be [json-patch](http://jsonpatch.com/) format.
 
 Creates a VNC connection.
 
+<!-- omit in toc -->
 ### POST /api/session/data/{{data_source}}/connections
 
 #### Headers
@@ -511,6 +501,7 @@ Creates a VNC connection.
 
 Creates a SSH connection.
 
+<!-- omit in toc -->
 ### POST /api/session/data/{{data_source}}/connections
 
 #### Headers
@@ -603,6 +594,7 @@ Creates a SSH connection.
 
 Creates a RDP connection.
 
+<!-- omit in toc -->
 ### POST /api/session/data/{{data_source}}/connections
 
 #### Headers
@@ -729,6 +721,7 @@ Creates a RDP connection.
 
 Creates a Telnet connection.
 
+<!-- omit in toc -->
 ### POST /api/session/data/{{data_source}}/connections
 
 #### Headers
@@ -817,6 +810,7 @@ Creates a Telnet connection.
 
 Creates a Kubernetes connection.
 
+<!-- omit in toc -->
 ### POST /api/session/data/{{data_source}}/connections
 
 #### Headers
@@ -906,6 +900,7 @@ Creates a Kubernetes connection.
 
 Updates VNC connection.
 
+<!-- omit in toc -->
 ### PUT /api/session/data/{{data_source}}/connections/{{connection}}
 
 #### Headers
@@ -994,6 +989,7 @@ This request does not return a response body.
 
 Updates SSH connection.
 
+<!-- omit in toc -->
 ### PUT /api/session/data/{{data_source}}/connections/{{connection}}
 
 #### Headers
@@ -1089,6 +1085,7 @@ This request does not return a response body.
 
 Updates RDP connection.
 
+<!-- omit in toc -->
 ### PUT /api/session/data/{{data_source}}/connections/{{connection}}
 
 #### Headers
@@ -1218,6 +1215,7 @@ This request does not return a response body.
 
 Updates Telnet connection.
 
+<!-- omit in toc -->
 ### PUT /api/session/data/{{data_source}}/connections/{{connection}}
 
 #### Headers
@@ -1309,6 +1307,7 @@ This request does not return a response body.
 
 Updates Kubernetes connection.
 
+<!-- omit in toc -->
 ### PUT /api/session/data/{{data_source}}/connections/{{connection}}
 
 #### Headers
@@ -1401,6 +1400,7 @@ This request does not return a response body.
 
 Deletes given connection.
 
+<!-- omit in toc -->
 ### DELETE /api/session/data/{{data_source}}/connections/{{connection}}
 
 #### Headers

@@ -1,35 +1,34 @@
+<!-- omit in toc -->
 # Authentication
 
 Authentication allows you create and delete tokens.
 
+<!-- omit in toc -->
 # Table of Contents
 
-- [Authentication](#authentication)
-- [Table of Contents](#table-of-contents)
-  - [Generate Token](#generate-token)
-    - [POST /api/tokens](#post-apitokens)
-      - [Headers](#headers)
-      - [Path Parameters](#path-parameters)
-      - [Query Parameters](#query-parameters)
-      - [Request Body](#request-body)
-    - [Response](#response)
-      - [Status Code](#status-code)
-      - [Response Body](#response-body)
-      - [Response Examples](#response-examples)
-  - [Delete Token](#delete-token)
-    - [DELETE /api/tokens/{{token}}](#delete-apitokenstoken)
-      - [Headers](#headers-1)
-      - [Path Parameters](#path-parameters-1)
-      - [Query Parameters](#query-parameters-1)
-      - [Request Body](#request-body-1)
-    - [Response](#response-1)
-      - [Status Code](#status-code-1)
-      - [Response Body](#response-body-1)
+- [Generate Token](#generate-token)
+    - [Headers](#headers)
+    - [Path Parameters](#path-parameters)
+    - [Query Parameters](#query-parameters)
+    - [Request Body](#request-body)
+  - [Response](#response)
+    - [Status Code](#status-code)
+    - [Response Body](#response-body)
+    - [Response Examples](#response-examples)
+- [Delete Token](#delete-token)
+    - [Headers](#headers-1)
+    - [Path Parameters](#path-parameters-1)
+    - [Query Parameters](#query-parameters-1)
+    - [Request Body](#request-body-1)
+  - [Response](#response-1)
+    - [Status Code](#status-code-1)
+    - [Response Body](#response-body-1)
 
 ## Generate Token
 
 Generates token.
 
+<!-- omit in toc -->
 ### POST /api/tokens
 
 #### Headers
@@ -88,6 +87,7 @@ Returns a JSON object.
 
 Deletes token.
 
+<!-- omit in toc -->
 ### DELETE /api/tokens/{{token}}
 
 #### Headers

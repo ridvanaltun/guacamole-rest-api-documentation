@@ -1,79 +1,73 @@
+<!-- omit in toc -->
 # Connection Groups
 
 Manage connection groups.
 
+<!-- omit in toc -->
 # Table of Contents
 
-- [Connection Groups](#connection-groups)
-- [Table of Contents](#table-of-contents)
-  - [List Connection Groups](#list-connection-groups)
-    - [GET /api/session/data/{{data_source}}/connectionGroups](#get-apisessiondatadatasourceconnectiongroups)
-      - [Headers](#headers)
-      - [Path Parameters](#path-parameters)
-      - [Query Parameters](#query-parameters)
-      - [Request Body](#request-body)
-    - [Response](#response)
-      - [Status Code](#status-code)
-      - [Response Body](#response-body)
-  - [List Connections and Connection Groups](#list-connections-and-connection-groups)
-    - [GET /api/session/data/{{data_source}}/connectionGroups/ROOT/tree](#get-apisessiondatadatasourceconnectiongroupsroottree)
-      - [Headers](#headers-1)
-      - [Path Parameters](#path-parameters-1)
-      - [Query Parameters](#query-parameters-1)
-      - [Request Body](#request-body-1)
-    - [Response](#response-1)
-      - [Status Code](#status-code-1)
-      - [Response Body](#response-body-1)
-  - [Details of Connection Group](#details-of-connection-group)
-    - [GET /api/session/data/{{data_source}}/connectionGroups/{{connection_group}}](#get-apisessiondatadatasourceconnectiongroupsconnectiongroup)
-      - [Headers](#headers-2)
-      - [Path Parameters](#path-parameters-2)
-      - [Query Parameters](#query-parameters-2)
-      - [Request Body](#request-body-2)
-    - [Response](#response-2)
-      - [Status Code](#status-code-2)
-      - [Response Body](#response-body-2)
-  - [Details of Connection Group Tree](#details-of-connection-group-tree)
-    - [GET /api/session/data/{{data_source}}/connectionGroups/{{connection_group}}/tree](#get-apisessiondatadatasourceconnectiongroupsconnectiongrouptree)
-      - [Headers](#headers-3)
-      - [Path Parameters](#path-parameters-3)
-      - [Query Parameters](#query-parameters-3)
-      - [Request Body](#request-body-3)
-    - [Response](#response-3)
-      - [Status Code](#status-code-3)
-      - [Response Body](#response-body-3)
-  - [Update Connection Group](#update-connection-group)
-    - [PUT /api/session/data/{{data_source}}/connectionGroups/{{connection_group}}](#put-apisessiondatadatasourceconnectiongroupsconnectiongroup)
-      - [Headers](#headers-4)
-      - [Path Parameters](#path-parameters-4)
-      - [Query Parameters](#query-parameters-4)
-      - [Request Body](#request-body-4)
-    - [Response](#response-4)
-      - [Status Code](#status-code-4)
-      - [Response Body](#response-body-4)
-  - [Create Connection Group](#create-connection-group)
-    - [POST /api/session/data/{{data_source}}/connectionGroups](#post-apisessiondatadatasourceconnectiongroups)
-      - [Headers](#headers-5)
-      - [Path Parameters](#path-parameters-5)
-      - [Query Parameters](#query-parameters-5)
-      - [Request Body](#request-body-5)
-    - [Response](#response-5)
-      - [Status Code](#status-code-5)
-      - [Response Body](#response-body-5)
-  - [Delete Connection Group](#delete-connection-group)
-    - [DELETE /api/session/data/{{data_source}}/connectionGroups/{{connection_group}}](#delete-apisessiondatadatasourceconnectiongroupsconnectiongroup)
-      - [Headers](#headers-6)
-      - [Path Parameters](#path-parameters-6)
-      - [Query Parameters](#query-parameters-6)
-      - [Request Body](#request-body-6)
-    - [Response](#response-6)
-      - [Status Code](#status-code-6)
-      - [Response Body](#response-body-6)
+- [List Connection Groups](#list-connection-groups)
+    - [Headers](#headers)
+    - [Path Parameters](#path-parameters)
+    - [Query Parameters](#query-parameters)
+    - [Request Body](#request-body)
+  - [Response](#response)
+    - [Status Code](#status-code)
+    - [Response Body](#response-body)
+- [List Connections and Connection Groups](#list-connections-and-connection-groups)
+    - [Headers](#headers-1)
+    - [Path Parameters](#path-parameters-1)
+    - [Query Parameters](#query-parameters-1)
+    - [Request Body](#request-body-1)
+  - [Response](#response-1)
+    - [Status Code](#status-code-1)
+    - [Response Body](#response-body-1)
+- [Details of Connection Group](#details-of-connection-group)
+    - [Headers](#headers-2)
+    - [Path Parameters](#path-parameters-2)
+    - [Query Parameters](#query-parameters-2)
+    - [Request Body](#request-body-2)
+  - [Response](#response-2)
+    - [Status Code](#status-code-2)
+    - [Response Body](#response-body-2)
+- [Details of Connection Group Tree](#details-of-connection-group-tree)
+    - [Headers](#headers-3)
+    - [Path Parameters](#path-parameters-3)
+    - [Query Parameters](#query-parameters-3)
+    - [Request Body](#request-body-3)
+  - [Response](#response-3)
+    - [Status Code](#status-code-3)
+    - [Response Body](#response-body-3)
+- [Update Connection Group](#update-connection-group)
+    - [Headers](#headers-4)
+    - [Path Parameters](#path-parameters-4)
+    - [Query Parameters](#query-parameters-4)
+    - [Request Body](#request-body-4)
+  - [Response](#response-4)
+    - [Status Code](#status-code-4)
+    - [Response Body](#response-body-4)
+- [Create Connection Group](#create-connection-group)
+    - [Headers](#headers-5)
+    - [Path Parameters](#path-parameters-5)
+    - [Query Parameters](#query-parameters-5)
+    - [Request Body](#request-body-5)
+  - [Response](#response-5)
+    - [Status Code](#status-code-5)
+    - [Response Body](#response-body-5)
+- [Delete Connection Group](#delete-connection-group)
+    - [Headers](#headers-6)
+    - [Path Parameters](#path-parameters-6)
+    - [Query Parameters](#query-parameters-6)
+    - [Request Body](#request-body-6)
+  - [Response](#response-6)
+    - [Status Code](#status-code-6)
+    - [Response Body](#response-body-6)
 
 ## List Connection Groups
 
 List connection groups.
 
+<!-- omit in toc -->
 ### GET /api/session/data/{{data_source}}/connectionGroups
 
 #### Headers
@@ -108,6 +102,7 @@ None.
 
 List connection groups with connections.
 
+<!-- omit in toc -->
 ### GET /api/session/data/{{data_source}}/connectionGroups/ROOT/tree
 
 #### Headers
@@ -142,6 +137,7 @@ None.
 
 Details of connection group.
 
+<!-- omit in toc -->
 ### GET /api/session/data/{{data_source}}/connectionGroups/{{connection_group}}
 
 #### Headers
@@ -177,6 +173,7 @@ None.
 
 Details of connection group tree.
 
+<!-- omit in toc -->
 ### GET /api/session/data/{{data_source}}/connectionGroups/{{connection_group}}/tree
 
 #### Headers
@@ -213,6 +210,7 @@ None.
 
 Updates connection group.
 
+<!-- omit in toc -->
 ### PUT /api/session/data/{{data_source}}/connectionGroups/{{connection_group}}
 
 #### Headers
@@ -263,6 +261,7 @@ This request does not return a response body.
 
 Creates connection group.
 
+<!-- omit in toc -->
 ### POST /api/session/data/{{data_source}}/connectionGroups
 
 #### Headers
@@ -310,6 +309,7 @@ Creates connection group.
 
 Delete connection group.
 
+<!-- omit in toc -->
 ### DELETE /api/session/data/{{data_source}}/connectionGroups/{{connection_group}}
 
 #### Headers
