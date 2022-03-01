@@ -3,7 +3,7 @@
 
 Guacamole REST API gives you access and manage Guacamole Web Application.
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://god.postman.co/run-collection/2537d2daa25c7137c9ea?action=collection%2Fimport)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://god.gw.postman.com/run-collection/8259062-57a268f6-bee4-4cc8-9469-d2214982549f?action=collection%2Ffork&collection-url=entityId%3D8259062-57a268f6-bee4-4cc8-9469-d2214982549f%26entityType%3Dcollection%26workspaceId%3D3ea615b0-b0b9-4991-8aa0-5c1a6b603e99)
 
 <!-- omit in toc -->
 ## Table of Contents
